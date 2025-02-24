@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
   import AuthLogout from '~/components/AuthLogout.vue';
-  import Dashboard from '~/components/Dashboard.vue';
+  import Dashboard from '~/components/dashboard/Dashboard.vue';
   definePageMeta({
     middleware: 'auth',
   });
