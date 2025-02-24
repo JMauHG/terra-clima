@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
+onMounted(() => {
+  console.log('The component has been mounted');
+});
+
 const logout = async () => {
   await useFetch('/api/auth/logout', { method: 'GET', credentials: 'include' });
-  router.push('/login'); // Redirige al login después del logout
+  router.push('/login');
 };
 </script>
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 
 const email = ref('');
 const password = ref('');
 const errorMessage = ref('');
 const successMessage = ref('');
+const router = useRouter();
 
 const register = async () => {
   errorMessage.value = '';
@@ -18,9 +18,7 @@ const register = async () => {
   if (error.value) {
     errorMessage.value = error.value.statusMessage ?? 'An unknown error occurred';
   } else {
-    successMessage.value = "User registered successfully!";
-    email.value = '';
-    password.value = '';
+    router.push('/login');
   }
 };
 </script>
@@ -33,7 +31,5 @@ const register = async () => {
       <input v-model="password" type="password" placeholder="Password" required />
       <button type="submit">Register</button>
     </form>
-    <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
-    <p v-if="successMessage" style="color: green;">{{ successMessage }}</p>
   </div>
 </template>
