@@ -9,11 +9,14 @@ export default class ApiService {
   
     async makeRequest(params: Record<string, string>) {
       try {
-        const url = new URL(`${this.baseUrl}${this.endpoint}`);
+        const url = new URL(`${this.baseUrl}/${this.endpoint}`);
         
         Object.keys(params).forEach(key => {
           url.searchParams.append(key, params[key]);
         });
+
+        console.log(' ------------------ url ------------------ ')
+        console.log(url)
   
         const response = await fetch(url);
         

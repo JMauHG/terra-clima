@@ -7,8 +7,7 @@ export function getWeatherProvider(providerName = 'visualcrossing'): IWeather {
     case 'visualcrossing':
       return new VisualCrossingProvider();
     case 'weatherapi':
-      return new WeatherApiProvider();
     default:
-        return new VisualCrossingProvider();
+      return new WeatherApiProvider();
   }
 }

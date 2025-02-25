@@ -18,7 +18,7 @@ export class WeatherApiProvider implements IWeather {
 
     try {
       const response = await apiService.makeRequest(params);
-      const avgHumidity = response?.forecast?.forecastday?.[0]?.day?.avghumidity;
+      return response?.forecast?.forecastday?.[0]?.day?.avghumidity;
     } catch (error) {
       console.error('Get Humidity Error:', error);
       throw error;

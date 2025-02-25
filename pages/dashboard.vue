@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <AuthLogout />
+  <div class="p-8 bg-gray-900 text-white min-h-screen">
+    <div class="flex justify-between items-center mb-8">
+      <AuthLogout />
+    </div>
     <Dashboard />
   </div>
 </template>

@@ -6,8 +6,8 @@
       }"
       class="p-4 rounded-lg mt-8"
     >
-      <p class="text-lg">Fecha: {{ data.date }}</p>
-      <p class="text-lg">Humedad: {{ data.humidity }}</p>
+      <p class="text-lg">Date: {{ data.date }}</p>
+      <p class="text-lg">Humidity: {{ data.humidity }}</p>
       <p class="text-lg">{{ data.message }}</p>
     </div>
   </template>
@@ -27,6 +27,6 @@
   
   const isSuitable = computed(() => {
     const humidityValue = parseFloat(props.data.humidity);
-    return humidityValue >= 40; // Ajusta el valor según lo que consideres "suficiente"
+    return humidityValue >= 20 && humidityValue <= 60;
   });
   </script>
